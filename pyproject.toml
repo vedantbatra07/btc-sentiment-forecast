@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "btc-sentiment-forecast"
+version = "0.1.0"
+description = "Bitcoin price forecasting with X sentiment and walk-forward evaluation"
+requires-python = ">=3.11"
+dependencies = ["numpy>=2.0,<3", "pandas>=2.2,<3", "scikit-learn>=1.5,<2", "matplotlib>=3.9,<4", "requests==2.32.5", "vaderSentiment==3.3.2", "python-dotenv==1.2.1", "joblib>=1.4,<2"]
+
+[project.optional-dependencies]
+dev = ["pytest==8.4.2"]
+
+[project.scripts]
+btc-sentiment = "btc_sentiment.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

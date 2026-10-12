@@ -1,0 +1,49 @@
+{
+  "mode": "price-only",
+  "generated_at": "2026-10-12T16:07:45.150118+00:00",
+  "python": "3.12.14",
+  "database_sha256": "dbbffeb582bb951134345e9a38994b116ad8b8dd67af54d8cafce720f0c9d086",
+  "packages": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.9.1",
+    "vaderSentiment": "3.3.2",
+    "requests": "2.32.5",
+    "matplotlib": "3.11.2",
+    "joblib": "1.6.0"
+  },
+  "provenance": {
+    "price_request": {
+      "start": "2026-04-15T00:00:00+00:00",
+      "end": "2026-10-12T00:00:00+00:00",
+      "rows": 4315
+    },
+    "tavily_request": {
+      "query": {
+        "query": "Bitcoin BTC market recent news",
+        "topic": "news",
+        "time_range": "week",
+        "max_results": 8,
+        "search_depth": "basic",
+        "include_answer": false,
+        "include_raw_content": false
+      },
+      "retrieved_at": "2026-10-12T16:03:20.964354+00:00",
+      "count": 8
+    }
+  },
+  "model": "StandardScaler + Ridge(alpha=10)",
+  "seed": "deterministic estimator",
+  "horizons": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "train_min": 60,
+  "test_block_days": 14,
+  "cost_bps": 10,
+  "signal_threshold_log_return": 0.002
+}
