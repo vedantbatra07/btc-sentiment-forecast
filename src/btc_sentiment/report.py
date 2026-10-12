@@ -63,13 +63,31 @@ def write_reports(out, joined, oos, forecast, metrics, risk, curves, audit, news
     fig.colorbar(im, ax=ax, label="Absolute percentage error")
     fig.savefig(out/"forecast_matrix.png", dpi=150)
     plt.close(fig)
+    fig, ax = plt.subplots(figsize=(10,4),layout="constrained")
+    positions = np.arange(6)
+    ax.plot(positions,forecast.predicted_price,marker="o",color="#133F69",label="Forecast")
+    if forecast.lower_empirical_90.notna().all():
+        ax.fill_between(positions,forecast.lower_empirical_90,forecast.upper_empirical_90,alpha=.18,color="#133F69",label="Empirical residual band")
+    ax.axhline(forecast.anchor_price.iloc[0],linestyle="--",color="#666666",label="Last known close")
+    ax.set_xticks(positions,forecast.horizon)
+    ax.set(title=f"Six closing-price forecasts — origin {forecast.origin.iloc[0][:10]}",ylabel="BTC-USD",xlabel="Daily horizon")
+    ax.legend()
+    fig.savefig(out/"latest_forecast.png",dpi=150)
+    plt.close(fig)
     coverage = float(joined.covered.mean())
     incomplete = joined[joined.hours.notna() & joined.hours.ne(24)]
     gaps = ", ".join(str(d.date()) for d in incomplete.index) or "none"
-    status = "Real X sentiment evaluation" if mode == "live" else ("Price-only evaluation — X data not collected" if mode == "price-only" else "Synthetic integration test — not market evidence")
+    status = "Real X sentiment evaluation" if mode == "live" else ("Price-only benchmark — X features excluded" if mode == "price-only" else "Synthetic integration test — not market evidence")
+    row = metrics[(metrics.model==chosen) & metrics.horizon.eq(0)].iloc[0]
+    persistence = metrics[(metrics.model=='persistence') & metrics.horizon.eq(0)].iloc[0]
+    gain = 100*(1-row.mae_usd/persistence.mae_usd)
+    direction = 'lower' if gain >= 0 else 'higher'
+    interpretation = f"The {chosen} model's n+0 MAE is ${row.mae_usd:,.2f}, compared with ${persistence.mae_usd:,.2f} for persistence. Its error is {abs(gain):.1f}% {direction} than the no-change baseline."
     report = f"""# Bitcoin forecasting evaluation
 
 **Status: {status}.** Generated {pd.Timestamp.now(tz='UTC').isoformat()}.
+
+{interpretation} The model and trading rule were not retuned to improve this result.
 
 ## Experiment
 
@@ -91,6 +109,8 @@ Only the n+0 forecast drives the strategy. A predicted log return above 0.002 cr
 
 Sharpe = sqrt(365) × mean daily net return / sample standard deviation. Sortino uses the root mean square of negative daily returns, including zero for non-negative days. Both use a zero risk-free rate and a zero minimum acceptable return. Undefined ratios are N/A. Maximum drawdown is the worst equity decline from a prior peak, including the initial $1. Ratios are annualized, but the test does not span a year. Buy-and-hold covers the identical test dates and pays entry/exit costs.
 
+Total return and maximum drawdown are fractions: −0.10 denotes a 10% loss. The complete joined daily dataset and model features are materialized in SQLite for inspection.
+
 ## Data quality and limitations
 
 Coverage flags are available for {coverage:.1%} of joined dates (including the next forecast day). X searches are daily capped samples ordered by recency, not the full population. Sample volume must not be described as total platform volume. Duplicated IDs and copied text within a day are removed. Missing scraping days remain missing rather than becoming neutral sentiment. Historical text is a retrospective snapshot: deleted/edited posts and search selection still introduce survivorship and selection bias. This is historical out-of-sample research, not a point-in-time archive or a live trading record.
@@ -106,19 +126,24 @@ See README.md for exact commands, docs/METHODOLOGY.md for timing assumptions, an
 ![Sentiment and price](sentiment_price.png)
 ![Equity](equity.png)
 ![Horizon error matrix](forecast_matrix.png)
+![Latest forecasts](latest_forecast.png)
 """
     (out/"evaluation.md").write_text(report)
     if mode != "live":
-        outlook = "# Bitcoin sentiment outlook\n\nCurrent X sentiment is not assessed. Real Apify posts and current Tavily news have not been collected for this run. No bullish or bearish outlook can be supported from price-only or synthetic inputs.\n\nAfter collecting the real data, `btc-sentiment evaluate` generates the one-page summary with recent sample counts, sentiment changes and linked news context.\n"
+        outlook = "# Bitcoin sentiment outlook\n\nThis run does not evaluate real X sentiment. No bullish or bearish outlook can be supported from price-only or synthetic inputs. News alone cannot substitute for the required X sample.\n\nAfter collecting the real data, `btc-sentiment evaluate` generates the one-page summary with recent sample counts, sentiment changes and linked news context.\n"
     else:
         last = joined.index[joined.covered].max()
         recent = joined.loc[last-pd.Timedelta(days=6):last]
         prior = joined.loc[last-pd.Timedelta(days=13):last-pd.Timedelta(days=7)]
         mean = recent.sentiment.mean()
+        change = mean-prior.sentiment.mean()
+        shift = 'softened' if change < 0 else 'strengthened'
+        previous_close = joined.loc[last-pd.Timedelta(days=7),'close']
+        price_change = recent.close.iloc[-1]/previous_close-1
         tone = "positive" if mean >= .05 else "negative" if mean <= -.05 else "mixed / neutral"
         headlines = []
         limit = pd.Timestamp.now(tz="UTC")-pd.Timedelta(days=7)
-        for _, row in news.iterrows():
+        for _, row in news.sort_values(['published_at','relevance'],ascending=False,na_position='last').iterrows():
             published = pd.to_datetime(row.published_at, utc=True, errors="coerce")
             if pd.notna(published) and limit <= published <= pd.Timestamp.now(tz="UTC"):
                 title = str(row.title).replace("[", "(").replace("]", ")").replace("\n", " ")
@@ -129,7 +154,9 @@ As of {pd.Timestamp.now(tz='UTC').strftime('%d %B %Y, %H:%M UTC')}; latest sampl
 
 **Observed tone: {tone}.** The last seven days contain {int(recent.post_count.sum())} distinct sampled posts across {int(recent.covered.sum())} covered days. Mean daily VADER sentiment is {mean:.3f}, versus {prior.sentiment.mean():.3f} in the previous seven days. This is an equally weighted daily tone measure, not a price target or a recommendation. {int(recent.capped.sum())} recent days reached the requested sampling cap.
 
-**Interpretation.** Positive text tone may reflect optimism, general enthusiasm or unrelated wording; it should not automatically be read as bullish trading intent. The daily cap and historical search ranking limit representativeness. The model's incremental value must be judged against the price-only results in evaluation.md, rather than inferred from this summary.
+**Price context.** Bitcoin's latest completed UTC close is ${recent.close.iloc[-1]:,.2f}, a {price_change:+.2%} change over seven days on Coinbase. Price and sentiment are different measurements; agreement between them does not establish causality.
+
+**Interpretation.** Sampled tone has {shift} by {abs(change):.3f} points from the previous week. VADER measures general wording, so positive tone is not necessarily bullish investment intent. These recency-capped samples cover only part of each day. Read this snapshot alongside the price-only comparison in evaluation.md; sentiment alone does not justify a trade.
 
 **Recent news context.** These Tavily results are separate from the model inputs and do not establish a causal explanation for sentiment changes.
 

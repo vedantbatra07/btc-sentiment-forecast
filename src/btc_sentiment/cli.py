@@ -12,7 +12,7 @@ import pandas as pd
 from dotenv import load_dotenv
 
 from .storage import connect, read
-from .ingest import fetch_prices, fetch_posts, fetch_news
+from .ingest import fetch_prices, fetch_posts_parallel, fetch_news
 from .features import build_dataset
 from .model import walk_forward, forecast_latest
 from .metrics import forecast_metrics, backtest
@@ -25,6 +25,7 @@ def evaluate(db, out, price_only=False, demo=False):
         if synthetic and json.loads(synthetic[0]) == "synthetic" and not demo:
             raise ValueError("Synthetic database: use the demo command, never live evaluation")
         x, joined = build_dataset(con)
+        x.rename_axis('origin').reset_index().to_sql('model_features',con,if_exists='replace',index=False)
         if not price_only:
             coverage = joined.covered.iloc[:-1]
             if not coverage.all():
@@ -37,6 +38,21 @@ def evaluate(db, out, price_only=False, demo=False):
         risk, curves = backtest(oos, joined)
         mode = "synthetic demo" if demo else "price-only" if price_only else "live"
         write_reports(out, joined, oos, forecast, metrics, risk, curves, audit, read(con,"news"), mode)
+        posts = read(con,"posts")
+        timestamps = pd.to_datetime(posts.timestamp,utc=True)
+        posts = posts[(timestamps >= joined.index.min()) & (timestamps < joined.index.max())]
+        spans = []
+        if not posts.empty:
+            stamps = pd.to_datetime(posts.timestamp,utc=True)
+            grouped = stamps.groupby(stamps.dt.floor('D'))
+            spans = ((grouped.max()-grouped.min()).dt.total_seconds()/60).tolist()
+        quality = {"raw_posts":len(posts),"complete_price_days":int(joined.hours.eq(24).sum()),
+            "scraped_days":int(joined.covered.sum()),"capped_days":int(joined.capped.sum()),
+            "missing_hour_days":[str(d.date()) for d in joined.index[joined.hours.notna() & joined.hours.ne(24)]],
+            "median_within_day_sample_span_minutes":float(pd.Series(spans).median()) if spans else None,
+            "missing_extracted_counts":posts[['likes','reposts','views','followers']].isna().sum().to_dict(),
+            "retained_unique_daily_texts":int(joined.post_count.sum())}
+        (Path(out)/'data_quality.json').write_text(json.dumps(quality,indent=2))
         provenance = dict(con.execute("SELECT key,value FROM provenance"))
     modeldir = Path("models")/("demo" if demo else "price-only" if price_only else "live")
     modeldir.mkdir(parents=True,exist_ok=True)
@@ -47,6 +63,7 @@ def evaluate(db, out, price_only=False, demo=False):
         "provenance": {k:json.loads(v) for k,v in provenance.items()},
         "model": "StandardScaler + Ridge(alpha=10)", "seed": "deterministic estimator", "horizons": list(range(6)),
         "train_min": 60, "test_block_days": 14, "cost_bps": 10, "signal_threshold_log_return": .002}
+    manifest['source_sha256'] = {p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(Path(__file__).parent.glob('*.py'))}
     (Path(out)/"run_manifest.json").write_text(json.dumps(manifest,indent=2))
     print(f"Wrote {mode} reports to {out}; {oos.origin.nunique()} test origins.")
 
@@ -62,7 +79,8 @@ def main(argv=None):
     p = sub.add_parser("posts",help="Fetch X posts; incurs Apify charges")
     p.add_argument("--days",type=int,default=180)
     p.add_argument("--end")
-    p.add_argument("--per-day",type=int,default=200)
+    p.add_argument("--per-day",type=int,default=50)
+    p.add_argument("--workers",type=int,default=4)
     p.add_argument("--max-charge-usd",type=float,required=True)
     sub.add_parser("news",help="Fetch current Tavily news")
     p = sub.add_parser("evaluate")
@@ -92,7 +110,7 @@ def main(argv=None):
                 if args.command == "prices":
                     print(f"Stored {fetch_prices(con,start,end)} hourly prices")
                 else:
-                    fetch_posts(con,start,end,args.max_charge_usd,args.per_day)
+                    fetch_posts_parallel(args.db,start,end,args.max_charge_usd,args.per_day,args.workers)
 
 
 if __name__ == "__main__":

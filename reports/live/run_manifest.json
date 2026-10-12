@@ -1,0 +1,2249 @@
+{
+  "mode": "live",
+  "generated_at": "2026-10-12T16:19:29.916795+00:00",
+  "python": "3.12.14",
+  "database_sha256": "e2f591f80d9730d27b3ff0609d5147d207113a052e82ebec8e48c3fb05413abd",
+  "packages": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.9.1",
+    "vaderSentiment": "3.3.2",
+    "requests": "2.32.5",
+    "matplotlib": "3.11.2",
+    "joblib": "1.6.0"
+  },
+  "provenance": {
+    "price_request": {
+      "start": "2026-04-15T00:00:00+00:00",
+      "end": "2026-10-12T00:00:00+00:00",
+      "rows": 4315
+    },
+    "tavily_request": {
+      "query": {
+        "query": "Bitcoin BTC market recent news",
+        "topic": "news",
+        "time_range": "week",
+        "max_results": 8,
+        "search_depth": "basic",
+        "include_answer": false,
+        "include_raw_content": false
+      },
+      "retrieved_at": "2026-10-12T16:03:20.964354+00:00",
+      "count": 8
+    },
+    "excluded_apidojo_pilot": {
+      "run_id": "jiPqzgERCxSuyiIE7",
+      "actor_id": "apidojo/twitter-scraper-lite",
+      "build_id": "ltjaT2Mjc0GavgNax",
+      "build_number": "0.0.1026",
+      "dataset_id": "kjoNM3YeMEDIQHhIa",
+      "usage_total_usd": 0,
+      "charged_event_counts": {
+        "list-query": 0,
+        "get-tweet-query": 0,
+        "dataset-item-tier-one": 0,
+        "dataset-item-tier-two": 0,
+        "dataset-item-tier-three": 0,
+        "dataset-item-tier-four": 0,
+        "dataset-item-tier-five": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-10-11": {
+      "run_id": "TiGTrnbe3T849qRKc",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "gfZpeRympAsU7NJBW",
+      "usage_total_usd": 0.0001084277849925889,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_config": {
+      "actor_id": "xquik/x-tweet-scraper",
+      "per_day": 50,
+      "invocation_max_charge_usd": 2.685,
+      "per_run_cap_usd": 0.015,
+      "start": "2026-04-15T00:00:00+00:00",
+      "end": "2026-10-12T00:00:00+00:00",
+      "workers": 4,
+      "query": "(BTC OR $BTC OR Bitcoin) lang:en -filter:retweets",
+      "sampling": "Latest, daily capped"
+    },
+    "apify_run_2026-04-18": {
+      "run_id": "ZOee8Kf5DEvrTFKfo",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "fHuA7XneCaBNelNL9",
+      "usage_total_usd": 0.00012290801634887855,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-04-17": {
+      "run_id": "SLNtrUyCNExjtSo5Y",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "bEuYvaP8IqYIDZNdV",
+      "usage_total_usd": 0.00011440727962553502,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-04-15": {
+      "run_id": "saXqDNuEqgSVmKqDT",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "GbEaiXCBfRxRU8jDW",
+      "usage_total_usd": 0.00010981840275890297,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-04-16": {
+      "run_id": "uRrJMx3GgG5Yjd4j8",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "ezYOaacxGTGw9pSMw",
+      "usage_total_usd": 0.00012465274620056152,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-04-20": {
+      "run_id": "1T2UYztgP2ETlIg8A",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "w6uohDfzyUhT7f5x5",
+      "usage_total_usd": 0.00012202077346377903,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-04-19": {
+      "run_id": "i4XLZyoW5G6spXJ3M",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "aKnPH1eEeRrNfzLKg",
+      "usage_total_usd": 0.00010441795545154149,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-04-22": {
+      "run_id": "YGoehrPnsb9G2CcEV",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "SajJPyB3u5vgDM2O8",
+      "usage_total_usd": 0.0001230133357114262,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-04-21": {
+      "run_id": "z9IwijD2Kgk2d4706",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "EDs5JbdUrmK0xvJuC",
+      "usage_total_usd": 0.00012430271542734572,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-04-23": {
+      "run_id": "FD3eBNWOjM9oEXIVr",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "lQhWjiUR56Cl3Sfa1",
+      "usage_total_usd": 0.00011406403123670155,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-04-24": {
+      "run_id": "vJFYj4aQfNwjowO7p",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "vJuQb3iAVAmDxfdNc",
+      "usage_total_usd": 0.0001294336816635397,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-04-25": {
+      "run_id": "iR9txQiyWzdrTPXvw",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "pCOnhj8S2bBHJSXTa",
+      "usage_total_usd": 0.00010916441642575794,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-04-26": {
+      "run_id": "ECqs6UzeuR8hF08RL",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "NOiCtXAXdbQ0ps9D7",
+      "usage_total_usd": 0.00011195608309242461,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-04-27": {
+      "run_id": "nD0ioK1ggTFIQcJzT",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "LfYgWDsvtJgPrnUoX",
+      "usage_total_usd": 0.00010915818874703513,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-04-28": {
+      "run_id": "rwlW7cnVzZ2YforrI",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "HiAL205KBmO5w4drE",
+      "usage_total_usd": 0.00010168664634227753,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-04-29": {
+      "run_id": "WRIPEhn2tkAOFpNlU",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "jf3WmLyJCdrCqCMDc",
+      "usage_total_usd": 0.00012344693962070677,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-04-30": {
+      "run_id": "CNoWXwg3MkeOK2nX6",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "lqX3DbsSbZbbp7YXg",
+      "usage_total_usd": 0.00012004855124155681,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-05-01": {
+      "run_id": "FTfkBgtobaiOFcJkS",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "81mXuslhIPl7G5gDL",
+      "usage_total_usd": 0.00010774998493327036,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-05-04": {
+      "run_id": "jbeFPCdsq5W4POiJz",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "1GnHbdX4WeXOY0DHT",
+      "usage_total_usd": 0.00010970927395423254,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-05-02": {
+      "run_id": "GJn8zR1akbDcLcfFx",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "fjgTT4CPpFhPuCo8Y",
+      "usage_total_usd": 0.00012822669025096628,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-05-03": {
+      "run_id": "JAHpMj3VdxAPzxwdV",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "j3MbZMcqkLMpBRWx8",
+      "usage_total_usd": 0.00011147747698260678,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-05-05": {
+      "run_id": "WAAxpNDFODSEaDQYD",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "SueqIEF59SJ1KeoVv",
+      "usage_total_usd": 0.000116279210348924,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-05-07": {
+      "run_id": "q8kUe8O3eSJ5fPbEK",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "5gQn24Xoldi3E93Hp",
+      "usage_total_usd": 0.00010577263691027958,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-05-08": {
+      "run_id": "k5elC3M5IzeYfioAr",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "uZcEE8Wa9sKNt88Nj",
+      "usage_total_usd": 0.00010516252941555448,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-05-06": {
+      "run_id": "1DsxqkVqivaAkt6rH",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "b0c0Rx0A6hpOD0Fnj",
+      "usage_total_usd": 0.00011026028606626722,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-05-09": {
+      "run_id": "bgKfjMkaLIbJRQcRk",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "GCyqbcXHYSZEUpOue",
+      "usage_total_usd": 0.00010858931720256806,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-05-12": {
+      "run_id": "wyjahuyXsURASWwqh",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "O4ttckyxVMWZaHxwl",
+      "usage_total_usd": 0.00012634904030958813,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-05-10": {
+      "run_id": "krXj0IFjNZ3nkddDz",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "zi8Jq7y4Ub4llSNxE",
+      "usage_total_usd": 0.00012945777743061384,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-05-11": {
+      "run_id": "0v4WgB8O7MiFhWuF5",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "LBhlhuMy6HLaLI7RL",
+      "usage_total_usd": 0.00013024639068543912,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-05-13": {
+      "run_id": "ScNXclc1buxOuRsKF",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "00BNTFJQh4yGbvSs7",
+      "usage_total_usd": 0.00014545202150609756,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-05-15": {
+      "run_id": "7Qsyzf4CLSh8LrltH",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "zmFBsLFHqS3cwcuC8",
+      "usage_total_usd": 0.00012179349501265422,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-05-14": {
+      "run_id": "p1WDZt0vgLnhfBjdo",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "vFk2wzhIwoPAMXZoE",
+      "usage_total_usd": 0.00011693829675515494,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-05-16": {
+      "run_id": "6nTUA7Ik3LiqxZ9fJ",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "8vhPyJ6UkA6tMKAlh",
+      "usage_total_usd": 0.00012030730567375821,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-05-17": {
+      "run_id": "JiLEXcKfDo8vnd7Rz",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "5HDbbXXoZVz2CUtgv",
+      "usage_total_usd": 0.00011531012400653627,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-05-18": {
+      "run_id": "Q8FkdmzAu3H1RVi3H",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "f8FqktJ0kE3QyNIUX",
+      "usage_total_usd": 0.00012065765976905824,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-05-19": {
+      "run_id": "s5kqMr76EITbSTEx1",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "ydwsEcmVzeZBHZ41g",
+      "usage_total_usd": 0.0001331598963091771,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-05-20": {
+      "run_id": "e8Q0R0aK7eWhZvIJ3",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "ycnfKH40o7OnNSO5G",
+      "usage_total_usd": 0.00012403069557580682,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-05-21": {
+      "run_id": "G36qQTaLDw2yobpgG",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "RWweQWHM0Zn9GPuXI",
+      "usage_total_usd": 0.00012817075727383296,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-05-22": {
+      "run_id": "8GqwcMjqaCV2qULqU",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "4Ku5coT2YKDgYnHbK",
+      "usage_total_usd": 5.2951311065091025e-05,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-05-23": {
+      "run_id": "B4ywmQBesHTb8sO8E",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "tcUk6HBoty3XdxF1X",
+      "usage_total_usd": 5.286797773175769e-05,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-05-24": {
+      "run_id": "sAxrbxws0L1vFW2oB",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "Mhz781Rh0J08eNlwB",
+      "usage_total_usd": 0.00012338031142950057,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-05-25": {
+      "run_id": "Xt4KtWJmb6B9fv0X8",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "xJ0d7UqpOSbA1Ait6",
+      "usage_total_usd": 0.00012904295873807537,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-05-26": {
+      "run_id": "goEcBdlqWpeB4emLT",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "inyhiC5X5VBERryyz",
+      "usage_total_usd": 0.00011194068974090949,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-05-27": {
+      "run_id": "kx8rNIqglwNB2IHGD",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "dR0LlkChXtWUC8kbw",
+      "usage_total_usd": 0.00012765255240599314,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-05-28": {
+      "run_id": "L5oCl3UnobgomvOZU",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "3JfJSoVE6iVQigq4i",
+      "usage_total_usd": 0.0004478893887748321,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-05-29": {
+      "run_id": "6I9hkfZKbIAa5Bi6y",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "FcGmRe6IrnhX5MvQa",
+      "usage_total_usd": 0.00012555326251851187,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-05-30": {
+      "run_id": "OGo9aC8uhRf6khjcL",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "SrDM3DLrjvbx93sCd",
+      "usage_total_usd": 0.00011029357948568133,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-05-31": {
+      "run_id": "bHpwGmM5RIY7SEoHD",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "BBzG2zQWKyuG4jsEm",
+      "usage_total_usd": 0.00012147716320223278,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-06-01": {
+      "run_id": "fLHcIhTTopHNxiJOl",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "8dyXmG1GIKxu6x432",
+      "usage_total_usd": 0.00012928686178392834,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-06-02": {
+      "run_id": "74tcVxcv5Ldw83JBn",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "vUNJRv0k4b3KENZBu",
+      "usage_total_usd": 0.00011434561172458863,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-06-03": {
+      "run_id": "5DslgGYVIFWWffqry",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "TkS28IeEeHBFLWDAE",
+      "usage_total_usd": 0.00013057459172937606,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-06-04": {
+      "run_id": "50ctchecZyxA9IXXc",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "C2aOBUjIkL2xGnbzc",
+      "usage_total_usd": 0.00012866243195533753,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-06-05": {
+      "run_id": "ZRzjCbFg9sng3JhhM",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "ifehJshxSbEhnJXz0",
+      "usage_total_usd": 0.0001224299950003624,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-06-06": {
+      "run_id": "feekau1MIPKeR8SL3",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "aLD3nfF2OhNhlZs7m",
+      "usage_total_usd": 0.00012739268551270166,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-06-07": {
+      "run_id": "CeaCdc4ReQjnJa8vv",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "FYnviJf7umLeV8gGl",
+      "usage_total_usd": 0.0001111256490415997,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-06-08": {
+      "run_id": "TtJrsy7MUwiLVBgHE",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "Ew1Ei8vXOHlzYKaDS",
+      "usage_total_usd": 0.00012429735270473694,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-06-09": {
+      "run_id": "ll26T8KagUO4z40Ih",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "UQf5eJoTmzhe5Ph0Y",
+      "usage_total_usd": 0.0003753286413765617,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-06-10": {
+      "run_id": "5wulR1hRMHBydEgGW",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "BNSgwZRunb1teSaGG",
+      "usage_total_usd": 0.00011156811903417111,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-06-11": {
+      "run_id": "E71h4j5fUh3Ni39WQ",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "knMo5SJLuv8O5VCnN",
+      "usage_total_usd": 0.00012489428334765964,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-06-12": {
+      "run_id": "AfqJU2l11RwEZz24C",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "i47G2Wgh7kHMlsTry",
+      "usage_total_usd": 0.00013172272916469309,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-06-13": {
+      "run_id": "tMjb9QvVexRLW8wmq",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "9RIDT5ve2Ys3Xdj22",
+      "usage_total_usd": 0.00012501702949901423,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-06-14": {
+      "run_id": "gQ0gRBlKSR7lPFfPo",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "88r5Vo0FhkbXlL6KF",
+      "usage_total_usd": 0.0001220712912215127,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-06-15": {
+      "run_id": "GQge89hNGD14slm30",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "izQAAubxua8QeQ7Vm",
+      "usage_total_usd": 0.00010372645901971394,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-06-16": {
+      "run_id": "7DQhHo863XU5TeD1Q",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "MJO0tHg1PehTmjZOi",
+      "usage_total_usd": 0.00011100447964668275,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-06-17": {
+      "run_id": "3na4clt6ofGtmhLvU",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "IF6an8cXc7F8VraGy",
+      "usage_total_usd": 0.00012727636925379435,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-06-18": {
+      "run_id": "1tCwDyJ27qOaldHmV",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "ppdc85jhLKd5V7zMp",
+      "usage_total_usd": 0.0001262483703510629,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-06-19": {
+      "run_id": "Rf2M7ldwAOlP1GGTe",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "PiBxByGNFXRaWJqSl",
+      "usage_total_usd": 0.00011070147440830868,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-06-20": {
+      "run_id": "JoPIwceVXrbrWlZli",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "Ff2cUjis51JUYndjq",
+      "usage_total_usd": 0.0001292287204861641,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-06-21": {
+      "run_id": "btsdVOJH5fqhSsOYe",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "RIHK2Yjn9FLgSMCM1",
+      "usage_total_usd": 0.00012897995997965337,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-06-22": {
+      "run_id": "q0KVd6NCICygk9aJl",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "oZsPkGTBcrCXDgMl4",
+      "usage_total_usd": 0.00011337469335397084,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-06-23": {
+      "run_id": "6eR92sZq3FGoQRG0S",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "nR94MVKNbnaxcWr5a",
+      "usage_total_usd": 0.00011406332609388564,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-06-24": {
+      "run_id": "X3AkzFtU89l5JUwc7",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "MlHF4iujyxst2oovV",
+      "usage_total_usd": 0.00010665566199355656,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-06-25": {
+      "run_id": "SKaxoOgSs25l6yymF",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "G1jXWMXAnp797Hbiu",
+      "usage_total_usd": 0.00010851610899633831,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-06-26": {
+      "run_id": "Z3IMu5IuShhSbMIlB",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "ek1pYqINe5LUYwM0z",
+      "usage_total_usd": 0.00012682128994332423,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-06-27": {
+      "run_id": "hWIahx6YBYb5yQXl6",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "NYyDZEsQgiPPSjphy",
+      "usage_total_usd": 0.00011414152216083473,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-06-28": {
+      "run_id": "wsFiXGPnvuT8fhMgD",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "Jvx1vGsEqGtwnwEPq",
+      "usage_total_usd": 0.00010856445281373131,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-06-29": {
+      "run_id": "WY5dVFe0lSv1QXQlu",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "N8QM0wQlchvrJNxja",
+      "usage_total_usd": 0.00011474059075779387,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-06-30": {
+      "run_id": "bXXmKyehC3TGgsOkc",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "vXObDbmetHzxG3mxK",
+      "usage_total_usd": 0.00012993728480736416,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-07-01": {
+      "run_id": "FKy2aghBb3zb7feyD",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "puGGRKOW18mZnUYg2",
+      "usage_total_usd": 0.0001249990127351549,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-07-02": {
+      "run_id": "gKKTebIumBfwBALPk",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "mDl45Bx6cYdj5abtt",
+      "usage_total_usd": 0.00011454803332355288,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-07-03": {
+      "run_id": "kcIGRd1xNZ19JH62r",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "8hO143PQB5zwknPvD",
+      "usage_total_usd": 0.00010875158036417431,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-07-04": {
+      "run_id": "eywEA4kdQalQjYTNG",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "fdwOmHKjNbxuKCstc",
+      "usage_total_usd": 0.00011865686838494405,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-07-05": {
+      "run_id": "u5ckYDqFJyshLOrK6",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "57B4J4IIiy6a0y3jw",
+      "usage_total_usd": 0.00012452106504307853,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-07-06": {
+      "run_id": "ODe9CU9EQePa58jDD",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "lG0Ns7QMjvgaBAvxl",
+      "usage_total_usd": 0.00042403309113118385,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-07-07": {
+      "run_id": "BI46ppk9ubD4eBfZQ",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "b0X0qB0VPnBWo7U6c",
+      "usage_total_usd": 0.00010940371839867698,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-07-08": {
+      "run_id": "82TVDxHyROPxs4Cqf",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "OlNQ5uNhThVcUdLAX",
+      "usage_total_usd": 0.00012490817223654853,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-07-09": {
+      "run_id": "VEwmj5HrD2xZYEu8y",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "eohcC7mhYaIFpP1Yk",
+      "usage_total_usd": 0.00013092054168052143,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-07-10": {
+      "run_id": "TQt1LeYXmbHGCgrVm",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "31eckKCmpg7fFQQ4P",
+      "usage_total_usd": 0.0001294600003378259,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-07-11": {
+      "run_id": "hm5sGo7FQR7QSS76A",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "0Eb6pobYX5HTy3Ivv",
+      "usage_total_usd": 0.00010899610559807884,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-07-12": {
+      "run_id": "F0HyibCCafGwP5U5O",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "JkgB8bhYPkeBYpgKR",
+      "usage_total_usd": 0.00013518383346001307,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-07-13": {
+      "run_id": "7JcSql9vtsjWncVij",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "ae4LQx5tHTRNvuh7y",
+      "usage_total_usd": 0.00011679110907680461,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-07-14": {
+      "run_id": "vfFHKdDn55kCcIxIv",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "iiI8f65IlzsEELI4A",
+      "usage_total_usd": 0.00012787853374083836,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-07-15": {
+      "run_id": "nt0Z4zr97cjGIVMrN",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "hKpTMKx9deLQoLmS9",
+      "usage_total_usd": 0.00012141089936097463,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-07-17": {
+      "run_id": "ZDCtqxONeGPCfEJTM",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "tCBRVLzh3L1tlmOEv",
+      "usage_total_usd": 0.00011373616481158468,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-07-18": {
+      "run_id": "u54B8B0CGzcX1rZkG",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "5w7bdrKArOFUExaVT",
+      "usage_total_usd": 0.00013063554422888492,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-07-16": {
+      "run_id": "Ff3nmYCNwtZsp0glt",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "Ye0wFPbZzz2x31s9c",
+      "usage_total_usd": 0.00045554204457170437,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-07-19": {
+      "run_id": "P0ry9YMXoviIbAv7g",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "vWrbgptPERNSo5cl2",
+      "usage_total_usd": 0.00010782489628924264,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-07-20": {
+      "run_id": "ch4IeF8rhFq7awhTE",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "JmpoT9q6QlTHkk0Ok",
+      "usage_total_usd": 0.00012313819513056016,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-07-21": {
+      "run_id": "s2n7z2VbDhCEzxEmK",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "DyN8RCzhWnUvXnDba",
+      "usage_total_usd": 0.00011104136002063751,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-07-22": {
+      "run_id": "WrAbY0Tf2TmAR1Gpq",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "FgpQgOBQrn8Fzlhp6",
+      "usage_total_usd": 0.000124476021250089,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-07-23": {
+      "run_id": "e9Tx5pVcJOjx15GaN",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "xAar39QKB86itwQaE",
+      "usage_total_usd": 0.00011498050594495402,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-07-24": {
+      "run_id": "z09SY7sde2S0zonSm",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "I3X1JlQXth9Q84ifF",
+      "usage_total_usd": 0.00012252673176427683,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-07-25": {
+      "run_id": "WXLdXQzV3F6at92F1",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "CHqTsVNxDNOR7IO8v",
+      "usage_total_usd": 0.00011158555344078277,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-07-26": {
+      "run_id": "CFnWCC8v6Aq4HRsYc",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "QlEZdejfxHcnehbAS",
+      "usage_total_usd": 0.00014205324584907957,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-07-27": {
+      "run_id": "Y1nXrR3zXajCuMPti",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "XOQSbfPoNZUk2kMOJ",
+      "usage_total_usd": 0.00012366420531935164,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-07-28": {
+      "run_id": "6YrznDR0rvaJlF4U8",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "mrQtMmO0HnZdjicl7",
+      "usage_total_usd": 0.00012421993110577268,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-07-29": {
+      "run_id": "DnLVlTyeLz8FXDqiI",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "dfige9SILjgLxMRj6",
+      "usage_total_usd": 0.00010740311087502375,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-07-30": {
+      "run_id": "VELvWl15UVbPm6Wkg",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "cXzurRl1f9rek7zCJ",
+      "usage_total_usd": 0.00010779720731576284,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-07-31": {
+      "run_id": "DwFI7DbAKhgw4VYVh",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "hHPcImZGpZo5a4Ijr",
+      "usage_total_usd": 0.00011046611701117622,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-08-01": {
+      "run_id": "fiAbhJc7jENhKgww4",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "ZRM5AGehmfy1TkAlI",
+      "usage_total_usd": 0.00011278095357285607,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-08-02": {
+      "run_id": "ZhGZmLZfx2ByG7UBY",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "rtyFeJ7d7f8pY0yau",
+      "usage_total_usd": 0.00011094987977875604,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-08-03": {
+      "run_id": "0LQmBHHEJHhoUchh4",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "KydP9QSv8DtAdZgUC",
+      "usage_total_usd": 0.00011554892593456639,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-08-04": {
+      "run_id": "MxxCZj34dKeyjEIRw",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "Dznb0yX9hUtmKGplH",
+      "usage_total_usd": 0.00011441636002063753,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-08-05": {
+      "run_id": "YAeNuG8PhdfQ1RLfQ",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "DDVdOUloYuyiFDJE0",
+      "usage_total_usd": 0.00010412907249397703,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-08-06": {
+      "run_id": "txZ3j4CkE6tGBgECC",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "1RR8W94tnZj4VyaCt",
+      "usage_total_usd": 0.00011056690262423622,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-08-07": {
+      "run_id": "6fW5auvbgkDwOjYjL",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "x8uaDf3UMJiWJTmDL",
+      "usage_total_usd": 0.00013516305631399152,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-08-08": {
+      "run_id": "rflcRjF93oPQ758S7",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "ZWvTGnCK3QiogGh8G",
+      "usage_total_usd": 0.00010994539107713436,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-08-09": {
+      "run_id": "9RO4ybVle1jE8Mjbp",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "4gxTIUf1bhsZE2vfj",
+      "usage_total_usd": 0.0001235073277950287,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-08-10": {
+      "run_id": "MrFsPXGpsgz2fZufA",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "m8gm3oE0fk5AwA2ay",
+      "usage_total_usd": 0.0001319518426126904,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-08-11": {
+      "run_id": "GDYuU9U1DcSOSmyR1",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "BCZB10HAOUqXZYMzH",
+      "usage_total_usd": 0.00012849419967664614,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-08-12": {
+      "run_id": "Tmd2UaovIUwqWhm6J",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "J5Rj2miKqiljj6AGa",
+      "usage_total_usd": 0.00012449533617496492,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-08-13": {
+      "run_id": "KKp7zxuX3FgrNDD9h",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "5PjivWRHlfZjwHqIu",
+      "usage_total_usd": 0.00012108026493920221,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-08-14": {
+      "run_id": "1JnBfi9zWj7x84zOk",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "hpgiuuZ7iE0sZdAwa",
+      "usage_total_usd": 5.2890329473548464e-05,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-08-15": {
+      "run_id": "NCr6FkKwu79pra2WK",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "3lj7OPDeuEuxWB8GG",
+      "usage_total_usd": 0.0001230605981681082,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-08-16": {
+      "run_id": "BeVbMlOELAwScodHB",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "lbyeij7BeWK6wfYcG",
+      "usage_total_usd": 0.0001224970483051406,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-08-17": {
+      "run_id": "Q4fDkPYuOkPSBWsBW",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "TQYSPmuaBiHZDwgvO",
+      "usage_total_usd": 0.00012749950605134172,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-08-18": {
+      "run_id": "SzFauTVeS65dgRnVo",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "HPceDkb2Ayg8uB10B",
+      "usage_total_usd": 0.00010978686290317111,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-08-19": {
+      "run_id": "GLBxKoxfP6EBkgz5W",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "H8TZHCp4vAwsT9Oxl",
+      "usage_total_usd": 0.00012838013726307288,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-08-20": {
+      "run_id": "Ylu5KdiniE8Bi2EBd",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "fbLcjvxyG4ihOTg8t",
+      "usage_total_usd": 0.00011483717323674096,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-08-21": {
+      "run_id": "702PDcpLBidgHr259",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "erKccSTksoN1zz4cD",
+      "usage_total_usd": 0.00012407991854349775,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-08-22": {
+      "run_id": "68EwZhVbuX4Tc0LXv",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "IvTfCTO8BohKJlwKE",
+      "usage_total_usd": 0.00011024056639273961,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-08-23": {
+      "run_id": "bKSJdhfzp2sPoY4uS",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "HjSsTBEEXyort7eph",
+      "usage_total_usd": 0.0001252718174788687,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-08-24": {
+      "run_id": "SMXSNxJZEICzFbL3O",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "KgaKE7lVnzhYPvPh1",
+      "usage_total_usd": 0.00010743104975091088,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-08-25": {
+      "run_id": "mdHs2cQYgOyn7CeFR",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "TQ1ROhfEdGTEDIFQ4",
+      "usage_total_usd": 0.00012904798499908712,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-08-26": {
+      "run_id": "obcDAgvIAuDMvopq1",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "selD8ghj4eJdpr5jp",
+      "usage_total_usd": 0.00011276163864798016,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-08-27": {
+      "run_id": "IFHllZ0tM5TscNlf9",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "YNCTbO0iCYmfH43Ww",
+      "usage_total_usd": 0.00011217433717515734,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-08-28": {
+      "run_id": "xfDNIXEODeOCw9Rz3",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "ib3La1UAUgl2WQgNm",
+      "usage_total_usd": 0.00012220668981472653,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-08-29": {
+      "run_id": "BOsktvHdgifId6uoD",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "UmTeKCjSahltVe0mG",
+      "usage_total_usd": 0.0001421883362680674,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-09-01": {
+      "run_id": "YrSkebcC1KCfST2Qf",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "kEJhv1mEjErC5sknu",
+      "usage_total_usd": 0.00011499123050106898,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-08-31": {
+      "run_id": "lywjbZn8HizPXpL5W",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "jwcQx17bXUzIpLasi",
+      "usage_total_usd": 0.0004936000382353863,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-09-02": {
+      "run_id": "mO37THjsJdRAcRoi1",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "KO29FFM3cjoolSsas",
+      "usage_total_usd": 0.00012334895582993827,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-08-30": {
+      "run_id": "KcmpyDxJjGuefcWPj",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "SkNmJzRXcGDrliY9s",
+      "usage_total_usd": 0.0006253253800703421,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-09-04": {
+      "run_id": "oKqEJuxcvP6RuKDFb",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "EBUgusaXAVx99fBm1",
+      "usage_total_usd": 0.0001302938476668464,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-09-03": {
+      "run_id": "IxnPC0Sx0aORUnUf2",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "vmAFFXoH8SJGpWI1C",
+      "usage_total_usd": 5.3277461032072705e-05,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-09-05": {
+      "run_id": "d5JkrHa70dinWPahe",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "wT4jfdc0dqn0fZojy",
+      "usage_total_usd": 0.00011659348731570774,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-09-07": {
+      "run_id": "FgEnGS7y6VySHbpFl",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "MK3W9cQseWLCDMgye",
+      "usage_total_usd": 0.00010815566199355655,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-09-08": {
+      "run_id": "HtEU3MWhp5gGDMexT",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "7BUhVCZFamMq4RVni",
+      "usage_total_usd": 0.00012545008592473135,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-09-06": {
+      "run_id": "1epdzf8U7oA6dmbcI",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "ablq2FcScHOTAYIA1",
+      "usage_total_usd": 0.00015767320244179834,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-09-10": {
+      "run_id": "7nCvGx4Gm5e7LeBVO",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "uGhnz2eYwnHJ6v2K2",
+      "usage_total_usd": 0.00046517677096194693,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-09-11": {
+      "run_id": "C0AjamWTCx3bndzcX",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "pZti8Kw2irXFpWw0h",
+      "usage_total_usd": 0.00015478258883787528,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-09-12": {
+      "run_id": "F1JejIxr0bJD1Frmy",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "PA4PwrNauAbFRCXmH",
+      "usage_total_usd": 0.0004468954806029797,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-09-09": {
+      "run_id": "suir1DfxqGlJKEOpe",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "F1j5GNcGRMaSYSKn6",
+      "usage_total_usd": 0.000568587698613604,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-09-13": {
+      "run_id": "DhpFC22ccYQhq6Fjo",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "gnXFRJYmKmZfwZK41",
+      "usage_total_usd": 0.00011726428562402726,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-09-14": {
+      "run_id": "vZxbPIEGMYubMYyyY",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "kNiULqAyREdTzh95n",
+      "usage_total_usd": 0.0001155304513639874,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-09-15": {
+      "run_id": "DBTwvonDD2blNprNe",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "ix3VsVxQZuyaU5tHl",
+      "usage_total_usd": 0.00010569932098521128,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-09-16": {
+      "run_id": "cbp26pEh9QO9dukRa",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "UEigeXy4dqnA6Lywo",
+      "usage_total_usd": 0.00011995167141490512,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-09-17": {
+      "run_id": "MKL0F7aoBcGmtu1UQ",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "A12MMr3tc1kdolLez",
+      "usage_total_usd": 0.00011763872763183381,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-09-18": {
+      "run_id": "lRHKENK1UUNnGZbNS",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "5AdZkvXAOVYMOk1jM",
+      "usage_total_usd": 0.00012222529623243545,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-09-19": {
+      "run_id": "mhtgz8VKYFbfgZdHr",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "zDKvPkcIQwb1DxnfH",
+      "usage_total_usd": 0.00012750466919773156,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-09-20": {
+      "run_id": "Qz4iKQLRCobhblIVa",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "eC11llIbKFs7TbeZY",
+      "usage_total_usd": 0.00010798290518257355,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-09-21": {
+      "run_id": "umcrUxQaqmKBqz1od",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "GdlYS2mmt4zTJu3SY",
+      "usage_total_usd": 0.00011857607591152193,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-09-23": {
+      "run_id": "nLzmIQtgrgKC1hmdB",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "Q50Hd7zOaGdPqTN80",
+      "usage_total_usd": 0.0001285475818531381,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-09-24": {
+      "run_id": "7n9CUbPzZpVCOlaoT",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "sZWBFJnykLYm8j4Bd",
+      "usage_total_usd": 0.00011834453421168857,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-09-25": {
+      "run_id": "2LyC4sbw9LjrBws7w",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "8I7VnSZwOkkNmdKyB",
+      "usage_total_usd": 0.00012463319331573115,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-09-22": {
+      "run_id": "x5StkgUxrBjAbKlCX",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "rmFGO2LOo6MskdOrn",
+      "usage_total_usd": 0.00044791817321545555,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-09-26": {
+      "run_id": "Y0eqtz7kS6h8tsegF",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "kkMEZPM3IWtuIFImZ",
+      "usage_total_usd": 0.0001103333182666037,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-09-27": {
+      "run_id": "hoAesm40oF3ESEgrd",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "dW1Cxqq9ptoDln2VR",
+      "usage_total_usd": 0.0001288820750117302,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-09-28": {
+      "run_id": "ehmsm3O7sB91CD3QP",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "rzd7Swph8pSUKhod3",
+      "usage_total_usd": 0.00011584939359956319,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-09-29": {
+      "run_id": "jfrx8Mp4h575wdgB7",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "hsmt2CH112XNe01js",
+      "usage_total_usd": 0.0001069311959412363,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-09-30": {
+      "run_id": "ghbOcKFgVYTyNIbdg",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "41Ys3zrKj8OsKH7Xx",
+      "usage_total_usd": 0.0001237059369020992,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-10-01": {
+      "run_id": "tNBISda9pMIsb3oAX",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "pOgVqsywhs9GTeKQf",
+      "usage_total_usd": 0.00010960307096110449,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-10-02": {
+      "run_id": "loFOMHWnodzoWDLwi",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "5taVsHgqckdkhNlj7",
+      "usage_total_usd": 0.00010969011307424969,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-10-03": {
+      "run_id": "H98mgyLCxwLCF7UEY",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "WQOuH69G8Mflp6BJt",
+      "usage_total_usd": 0.00012742716913753086,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-10-04": {
+      "run_id": "vfZjC0pvsN5UKCxAH",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "HWT9oVQWJqnpqQfz8",
+      "usage_total_usd": 0.00011687675011820264,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-10-05": {
+      "run_id": "Ynrv4RTc8hPxIaJhx",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "7PhTXz36FwolZ0MgH",
+      "usage_total_usd": 0.00010094815899597274,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-10-06": {
+      "run_id": "f2U4pl19CUIQtzfdQ",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "90BUba4tvtDK8Jcex",
+      "usage_total_usd": 0.00012219651026692657,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-10-07": {
+      "run_id": "oBFl21RcIWW0KdcV5",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "fbmdiQCuMCYL0xHJl",
+      "usage_total_usd": 0.00012672815223534903,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-10-08": {
+      "run_id": "7pMGV6uCzZPdCBaH9",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "S8wO9yx5cp2LPHaB6",
+      "usage_total_usd": 5.291970268223021e-05,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-10-09": {
+      "run_id": "nqonNQasi1FEjUMeh",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "7Q5qeZgbbqmqsoGvi",
+      "usage_total_usd": 0.00010694089035193125,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    },
+    "apify_run_2026-10-10": {
+      "run_id": "czg6nmwcBLlKjPAmL",
+      "actor_id": "xquik/x-tweet-scraper",
+      "build_id": "YO7c3m5Rpk2cedo5a",
+      "build_number": "1.12.372",
+      "dataset_id": "i1g2owsr2V89V5CMu",
+      "usage_total_usd": 0.0001316255934238434,
+      "charged_event_counts": {
+        "apify-default-dataset-item": 0
+      },
+      "status": "SUCCEEDED"
+    }
+  },
+  "model": "StandardScaler + Ridge(alpha=10)",
+  "seed": "deterministic estimator",
+  "horizons": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "train_min": 60,
+  "test_block_days": 14,
+  "cost_bps": 10,
+  "signal_threshold_log_return": 0.002,
+  "source_sha256": {
+    "__init__.py": "b4d3717b5cccf736f49b508cc7c94f41cd3639300dee1545fd44bf5a65325b09",
+    "cli.py": "87ba2c8145d3c9e77ea2a7c6a94049314c2048b5e8135607dabd1ab229657395",
+    "demo.py": "f2735496c929d6956e647f7682a23ff226c06e9ac7276424a23c48b4c0b986be",
+    "features.py": "90bbb28aa2a8cc1c85c65e88cc44b85d3bec53cc85643670fc05e13e669948bd",
+    "ingest.py": "b809db15e8c1b084e9f9d548dffec45bf46f8e47ff9c149d7057f8393ee69894",
+    "metrics.py": "1c1f3b468dfd60f9bc1dc30484effa1c350dda5ddac21fa3216c6c3706324cc1",
+    "model.py": "e97ff455813dd297cec7d4bfa07ffbeb51d86ce6aeccbb1bb1d4724355d69ea8",
+    "report.py": "5b99a1e821b98685682a62730484924db8373d18f623363f5a1adc6c6ceaf517",
+    "storage.py": "d9a096d26592b82455126403193d5d4040f6a4c193c6929c81d9c96dbc460318"
+  }
+}

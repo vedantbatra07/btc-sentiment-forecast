@@ -1,0 +1,17 @@
+{
+  "raw_posts": 9000,
+  "complete_price_days": 179,
+  "scraped_days": 180,
+  "capped_days": 180,
+  "missing_hour_days": [
+    "2026-05-08"
+  ],
+  "median_within_day_sample_span_minutes": 7.666666666666667,
+  "missing_extracted_counts": {
+    "likes": 0,
+    "reposts": 0,
+    "views": 0,
+    "followers": 0
+  },
+  "retained_unique_daily_texts": 8975
+}

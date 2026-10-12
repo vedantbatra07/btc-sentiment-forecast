@@ -6,7 +6,7 @@ import pytest
 
 from btc_sentiment.demo import populate
 from btc_sentiment.features import PRICE_FEATURES, SENTIMENT_FEATURES, build_dataset, daily_sentiment, daily_prices
-from btc_sentiment.ingest import normalize_post, fetch_posts, fetch_news
+from btc_sentiment.ingest import normalize_post, fetch_posts, fetch_posts_parallel, fetch_news
 from btc_sentiment.metrics import risk_metrics, backtest
 from btc_sentiment.model import eligible_training, walk_forward, forecast_latest
 from btc_sentiment.storage import connect, read, upsert
@@ -176,3 +176,27 @@ def test_tavily_adapter_stores_publication_and_retrieval_times(tmp_path,monkeypa
         row=read(con,'news').iloc[0]
         assert row.published_at.startswith('2024-01-01')
         assert row.retrieved_at!=row.published_at
+
+
+def test_parallel_scraping_allocates_fixed_total_budget(tmp_path,monkeypatch):
+    import threading
+    calls=[]
+    lock=threading.Lock()
+    def fake(con,start,end,max_charge_usd,per_day,write_config):
+        with lock:
+            calls.append((start,max_charge_usd))
+        return 1
+    monkeypatch.setattr('btc_sentiment.ingest.fetch_posts',fake)
+    count=fetch_posts_parallel(tmp_path/'parallel.sqlite',pd.Timestamp('2024-01-01',tz='UTC'),
+        pd.Timestamp('2024-01-05',tz='UTC'),.06,workers=4)
+    assert count==4
+    assert sum(c[1] for c in calls)==pytest.approx(.06)
+    assert len(set(c[0] for c in calls))==4
+
+
+def test_unknown_intermediate_target_is_excluded(database):
+    x,_=build_dataset(database)
+    day=x.index[110]
+    x.loc[day,'target_2']=np.nan
+    oos,_=walk_forward(x)
+    assert day not in set(oos.origin)

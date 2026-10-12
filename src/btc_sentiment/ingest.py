@@ -2,6 +2,7 @@
 import json
 import os
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 
 import pandas as pd
@@ -9,7 +10,7 @@ import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
-from .storage import metadata, upsert
+from .storage import connect, metadata, upsert
 
 
 def utcnow():
@@ -77,22 +78,23 @@ def normalize_post(item, fetched_at):
         raw_json=json.dumps(item, ensure_ascii=False))
 
 
-def fetch_posts(con, start, end, max_charge_usd, per_day=200, http=None):
+def fetch_posts(con, start, end, max_charge_usd, per_day=200, http=None, write_config=True):
     token = os.getenv("APIFY_TOKEN")
     if not token:
         raise ValueError("Set APIFY_TOKEN in your local .env before scraping")
     if per_day < 50 or max_charge_usd <= 0:
         raise ValueError("Use at least 50 posts/day and a positive maximum charge")
     http = http or session()
-    actor = os.getenv("APIFY_ACTOR_ID", "apidojo/twitter-scraper-lite")
+    actor = os.getenv("APIFY_ACTOR_ID", "xquik/x-tweet-scraper")
     headers = {"Authorization": f"Bearer {token}"}
     days = pd.date_range(start, end, freq="D", inclusive="left")
     pending = [d for d in days if not con.execute("SELECT 1 FROM coverage WHERE day=? AND status='SUCCEEDED'", (d.isoformat(),)).fetchone()]
     if not pending:
         return 0
     budget_each = max_charge_usd / len(pending)
-    metadata(con, "apify_config", {"actor_id": actor, "per_day": per_day, "max_charge_usd": max_charge_usd,
-        "query": "(BTC OR $BTC OR Bitcoin) lang:en -filter:retweets", "sampling": "Latest, daily capped"})
+    if write_config:
+        metadata(con, "apify_config", {"actor_id": actor, "per_day": per_day, "max_charge_usd": max_charge_usd,
+            "query": "(BTC OR $BTC OR Bitcoin) lang:en -filter:retweets", "sampling": "Latest, daily capped"})
     for day in pending:
         stop = day + pd.Timedelta(days=1)
         existing = con.execute("SELECT run_id,status FROM coverage WHERE day=?", (day.isoformat(),)).fetchone()
@@ -101,6 +103,12 @@ def fetch_posts(con, start, end, max_charge_usd, per_day=200, http=None):
         else:
             payload = {"searchTerms": [f"(BTC OR $BTC OR Bitcoin) lang:en -filter:retweets since:{day.date()} until:{stop.date()}"],
                 "maxItems": per_day, "sort": "Latest"}
+            if actor == "xquik/x-tweet-scraper":
+                payload.pop("sort")
+                payload["queryType"] = "Latest"
+                payload["mode"] = "search"
+            elif actor.startswith("apidojo/"):
+                payload["disableMaximization"] = True
             run = response_json(http.post(f"https://api.apify.com/v2/acts/{actor.replace('/', '~')}/runs",
                 headers=headers, params={"maxTotalChargeUsd": budget_each}, json=payload, timeout=60))["data"]
             run_id = run["id"]
@@ -138,6 +146,35 @@ def fetch_posts(con, start, end, max_charge_usd, per_day=200, http=None):
             returned_count=len(items), retained_count=len(rows), cap=per_day,
             capped=int(len(items) >= per_day), retrieved_at=utcnow())])
         print(f"X {day.date()}: {len(rows)} posts, capped={len(items) >= per_day}", flush=True)
+    return len(pending)
+
+
+def fetch_posts_parallel(db, start, end, max_charge_usd, per_day=50, workers=4):
+    """One SQLite connection per worker; fixed per-day caps sum to the invocation cap."""
+    if not 1 <= workers <= 4:
+        raise ValueError("Use one to four workers")
+    days = pd.date_range(start, end, freq="D", inclusive="left")
+    with connect(db) as con:
+        pending = [d for d in days if not con.execute("SELECT 1 FROM coverage WHERE day=? AND status='SUCCEEDED'",(d.isoformat(),)).fetchone()]
+        if not pending:
+            return 0
+        cap = max_charge_usd / len(pending)
+        metadata(con,"apify_config",{"actor_id":os.getenv("APIFY_ACTOR_ID","xquik/x-tweet-scraper"),
+            "per_day":per_day,"invocation_max_charge_usd":max_charge_usd,"per_run_cap_usd":cap,
+            "start":pd.Timestamp(start).isoformat(),"end":pd.Timestamp(end).isoformat(),"workers":workers,
+            "query":"(BTC OR $BTC OR Bitcoin) lang:en -filter:retweets","sampling":"Latest, daily capped"})
+    def run(day):
+        with connect(db) as con:
+            return fetch_posts(con,day,day+pd.Timedelta(days=1),cap,per_day,write_config=False)
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        jobs = [pool.submit(run,d) for d in pending]
+        try:
+            for job in as_completed(jobs):
+                job.result()
+        except Exception:
+            for job in jobs:
+                job.cancel()
+            raise
     return len(pending)
 
 

@@ -1,6 +1,8 @@
 # Bitcoin forecasting evaluation
 
-**Status: Price-only evaluation — X data not collected.** Generated 2026-10-12T16:07:45.146741+00:00.
+**Status: Price-only benchmark — X features excluded.** Generated 2026-10-12T16:19:32.230055+00:00.
+
+The price_only model's n+0 MAE is $1,099.36, compared with $971.59 for persistence. Its error is 13.2% higher than the no-change baseline. The model and trading rule were not retuned to improve this result.
 
 ## Experiment
 
@@ -40,9 +42,11 @@ Only the n+0 forecast drives the strategy. A predicted log return above 0.002 cr
 
 Sharpe = sqrt(365) × mean daily net return / sample standard deviation. Sortino uses the root mean square of negative daily returns, including zero for non-negative days. Both use a zero risk-free rate and a zero minimum acceptable return. Undefined ratios are N/A. Maximum drawdown is the worst equity decline from a prior peak, including the initial $1. Ratios are annualized, but the test does not span a year. Buy-and-hold covers the identical test dates and pays entry/exit costs.
 
+Total return and maximum drawdown are fractions: −0.10 denotes a 10% loss. The complete joined daily dataset and model features are materialized in SQLite for inspection.
+
 ## Data quality and limitations
 
-Coverage flags are available for 0.0% of joined dates (including the next forecast day). X searches are daily capped samples ordered by recency, not the full population. Sample volume must not be described as total platform volume. Duplicated IDs and copied text within a day are removed. Missing scraping days remain missing rather than becoming neutral sentiment. Historical text is a retrospective snapshot: deleted/edited posts and search selection still introduce survivorship and selection bias. This is historical out-of-sample research, not a point-in-time archive or a live trading record.
+Coverage flags are available for 99.4% of joined dates (including the next forecast day). X searches are daily capped samples ordered by recency, not the full population. Sample volume must not be described as total platform volume. Duplicated IDs and copied text within a day are removed. Missing scraping days remain missing rather than becoming neutral sentiment. Historical text is a retrospective snapshot: deleted/edited posts and search selection still introduce survivorship and selection bias. This is historical out-of-sample research, not a point-in-time archive or a live trading record.
 
 Price days with fewer than 24 hourly candles: 2026-05-08. Those daily OHLC values and affected feature windows are excluded, not interpolated.
 
@@ -55,3 +59,4 @@ See README.md for exact commands, docs/METHODOLOGY.md for timing assumptions, an
 ![Sentiment and price](sentiment_price.png)
 ![Equity](equity.png)
 ![Horizon error matrix](forecast_matrix.png)
+![Latest forecasts](latest_forecast.png)
